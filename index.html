@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BubeoStore | Cute Crocs-Style Clogs & Sandals</title>
+  <meta
+    name="description"
+    content="BubeoStore is a soft, stylish footwear showcase for Crocs-style clogs, sandals, slides, and kids footwear."
+  />
+
+  <style>
+    /* =========================================================
+       BUBEO STORE WEBSITE
+       Single-file HTML/CSS/JS website.
+       Edit products, sizes, colors, prices, and images in the
+       PRODUCT DATA section near the bottom of this file.
+       ========================================================= */
+
+    :root {
+      --bg: #fff8fb;
+      --bg-soft: #fff0f6;
+      --card: #ffffff;
+      --pink: #ff8fc2;
+      --pink-soft: #ffd6e8;
+      --pink-light: #fff3f8;
+      --text: #30242b;
+      --muted: #7d6873;
+      --line: #f3d6e3;
+      --shadow: 0 18px 45px rgba(255, 143, 194, 0.16);
+      --shadow-strong: 0 24px 60px rgba(255, 143, 194, 0.24);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 999px;
+      --container: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 214, 232, 0.9), transparent 32rem),
+        radial-gradient(circle at 80% 20%, rgba(255, 240, 246, 0.85), transparent 28rem),
+        var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: 0;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: #b64d82;
+      background: rgba(255, 255, 255, 0.78);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow::before {
+      content: "✦";
+      color: var(--pink);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 13vw, 5.4rem);
+      max-width: 820px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 8vw, 3.6rem);
+    }
+
+    h3 {
+      font-size: 1.22rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 680px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 13px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #ff7bb7, #ff9aca);
+      box-shadow: 0 14px 30px rgba(255, 123, 183, 0.32);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 20px 42px rgba(255, 123, 183, 0.42);
+    }
+
+    .btn-secondary {
+      color: #b64d82;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .btn-small {
+      min-height: 40px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 248, 251, 0.84);
+      border-bottom: 1px solid rgba(243, 214, 227, 0.72);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      font-size: 1.12rem;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff7bb7, #ffc0dc);
+      border-radius: 15px;
+      box-shadow: 0 12px 25px rgba(255, 143, 194, 0.3);
+    }
+
+    .nav-links {
+      position: fixed;
+      inset: 74px 16px auto 16px;
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: 13px 14px;
+      border-radius: 16px;
+      color: var(--muted);
+      font-weight: 760;
+    }
+
+    .nav-link:hover {
+      color: #b64d82;
+      background: var(--pink-light);
+    }
+
+    .menu-toggle {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      color: #b64d82;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .menu-icon {
+      position: relative;
+      width: 20px;
+      height: 14px;
+    }
+
+    .menu-icon span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      transition: transform 200ms ease, top 200ms ease, opacity 200ms ease;
+    }
+
+    .menu-icon span:nth-child(1) { top: 0; }
+    .menu-icon span:nth-child(2) { top: 6px; }
+    .menu-icon span:nth-child(3) { top: 12px; }
+
+    .menu-toggle.active .menu-icon span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.active .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active .menu-icon span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-title span {
+      color: #d95a98;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .stat-card {
+      padding: 14px 12px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .stat-card strong {
+      display: block;
+      color: #b64d82;
+      font-size: 1.1rem;
+      line-height: 1.1;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 430px;
+      padding: 14px;
+    }
+
+    .hero-blob {
+      position: absolute;
+      inset: 44px 6px 28px;
+      background: linear-gradient(145deg, #ffe0ed, #fff 54%, #ffd1e6);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 44px;
+      box-shadow: var(--shadow-strong);
+      transform: rotate(-3deg);
+    }
+
+    .hero-product-card {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-product-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 26px;
+      background: var(--pink-light);
+    }
+
+    .floating-tag {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      color: #b64d82;
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 12px 28px rgba(255, 143, 194, 0.2);
+      font-size: 0.83rem;
+      font-weight: 850;
+    }
+
+    .floating-tag.one {
+      top: 28px;
+      right: 4px;
+    }
+
+    .floating-tag.two {
+      bottom: 26px;
+      left: 2px;
+    }
+
+    /* Product filters */
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      margin: 22px 0 30px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+
+    .filter-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      flex: 0 0 auto;
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      background: #fff;
+      font-weight: 820;
+      transition: 180ms ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #fff;
+      background: linear-gradient(135deg, #ff7bb7, #ff9aca);
+      border-color: transparent;
+      box-shadow: 0 12px 26px rgba(255, 123, 183, 0.26);
+    }
+
+    .product-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(243, 214, 227, 0.86);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 16px 40px rgba(255, 143, 194, 0.12);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      padding: 12px 12px 0;
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1 / 0.82;
+      object-fit: cover;
+      border-radius: 22px;
+      background: var(--pink-light);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      padding: 7px 11px;
+      color: #b64d82;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      font-size: 0.74rem;
+      font-weight: 900;
+    }
+
+    .product-content {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .product-topline {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .price {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      color: #b64d82;
+      background: var(--pink-light);
+      border-radius: var(--radius-sm);
+      font-weight: 950;
+    }
+
+    .product-desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .meta-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .meta-label {
+      color: var(--text);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      background: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .color-dot {
+      width: 30px;
+      height: 30px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--line), 0 6px 12px rgba(48, 36, 43, 0.08);
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+      margin-top: 2px;
+    }
+
+    .product-gallery {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .product-gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-gallery img {
+      flex: 0 0 100%;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      aspect-ratio: 1 / 0.82;
+      object-fit: cover;
+      border-radius: 22px;
+      scroll-snap-align: center;
+    }
+
+    .product-image-wrap {
+      position: relative;
+      padding: 0;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      padding: 7px 11px;
+      color: #b64d82;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      font-size: 0.74rem;
+      font-weight: 900;
+    }
+
+    /* Variants */
+    .variants-panel {
+      display: grid;
+      gap: 22px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .variant-block {
+      display: grid;
+      gap: 12px;
+    }
+
+    .size-cloud,
+    .color-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .size-chip {
+      display: inline-grid;
+      place-items: center;
+      min-width: 48px;
+      height: 42px;
+      padding: 0 12px;
+      color: #b64d82;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      font-weight: 900;
+      box-shadow: 0 8px 16px rgba(255, 143, 194, 0.1);
+    }
+
+    .color-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      color: var(--muted);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      font-weight: 840;
+    }
+
+    /* About */
+    .about-card {
+      display: grid;
+      gap: 22px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .about-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .about-list li {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .about-list span {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      color: #b64d82;
+      background: var(--pink-light);
+      border-radius: 50%;
+      font-weight: 900;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .contact-card,
+    .form-card {
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-methods {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      background: var(--pink-light);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .contact-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff7bb7, #ff9aca);
+      border-radius: 15px;
+      font-weight: 950;
+    }
+
+    .contact-method strong {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .contact-method span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field label {
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: #b64d82;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255, 143, 194, 0.16);
+    }
+
+    .form-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 36px 0;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .footer-links,
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .socials a {
+      padding: 9px 12px;
+      color: var(--muted);
+      background: var(--pink-light);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* Desktop and tablet improvements */
+    @media (min-width: 700px) {
+      .section {
+        padding: 92px 0;
+      }
+
+      .hero {
+        padding: 78px 0 52px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.02fr 0.98fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-card {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 34px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: start;
+      }
+
+      .product-actions {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .nav-link {
+        padding: 10px 13px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .variants-panel {
+        grid-template-columns: 0.8fr 1fr;
+        padding: 30px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .container {
+        width: min(100% - 22px, var(--container));
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="BubeoStore home">
+        <span class="brand-mark">b</span>
+        <span>BubeoStore</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#products">Products</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">Soft, stylish <span>clogs & sandals</span> for every mood.</h1>
+          <p class="lead">
+            Welcome to BubeoStore — a boutique-style footwear showcase for comfortable Crocs-style clogs,
+            sandals, slides, and kids footwear in soft colors and easy everyday designs.
+          </p>
+          <div class="hero-actions">
+          </div>
+          <div class="hero-stats" aria-label="Shop highlights">
+            <div class="stat-card"><strong>EU 35–43</strong><span>Da dang size</span></div>
+            <div class="stat-card"><strong>6+ colors</strong><span>nhieu mau xinh xiu</span></div>
+            <div class="stat-card"><strong>No checkout</strong><span>contact to order</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Featured footwear preview">
+          <div class="hero-blob"></div>
+          <article class="hero-product-card">
+            <img
+              src="images/IMG_1656.JPG"
+              alt="Pastel pink footwear displayed on a clean boutique background"
+            />
+            <div>
+              <h3>Pastel Everyday Clogs</h3>
+              <p class="product-desc">Lightweight, comfy, and easy to style with casual outfits.</p>
+            </div>
+          </article>
+          <div class="floating-tag one">Best Seller</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Shop the cute comfort edit</h2>
+          <p class="lead">
+            Browse sample product cards below. Replace the names, images, sizes, colors, and prices in the JavaScript product data.
+          </p>
+        </div>
+
+        <div class="filter-row" id="filterRow" aria-label="Product categories">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="classic">Classic</button>
+          <button class="filter-btn" data-filter="collab">Collab</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-card">
+          <div>
+            <span class="eyebrow">About BubeoStore</span>
+            <h2>Comfortable, stylish, affordable footwear.</h2>
+          </div>
+          <div>
+            <p class="lead">
+              BubeoStore is a small online footwear showcase focused on cute Crocs-style clogs,
+              sandals, slides, and kids shoes. The goal is simple: help customers discover comfortable,
+              easy-to-wear designs in beautiful colors without a complicated shopping process.
+            </p>
+            <ul class="about-list" aria-label="Shop values">
+              <li><span>✓</span> Soft, everyday designs for casual outfits.</li>
+              <li><span>✓</span> Clear size and color information before customers message.</li>
+              <li><span>✓</span> Friendly direct contact through WhatsApp, Instagram, or email.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Contact to order</span>
+          <h2>Ask about availability</h2>
+          <p class="lead">
+            This showcase has no checkout or payment system. Customers can contact the shop directly for product details and availability.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Message the shop</h3>
+            <p class="product-desc">
+            </p>
+            <div class="contact-methods">
+              <a class="contact-method" href="https://wa.me/000000000000" target="_blank" rel="noopener">
+                <span class="contact-icon">Z</span>
+                <span><strong>Zalo</strong><span>+00 000 000 0000</span></span>
+              </a>
+              <a class="contact-method" href="https://www.instagram.com/bubeo.store?igsh=MWxld2tvdXR4aWcxMw==" target="_blank" rel="noopener">
+                <span class="contact-icon">IG</span>
+                <span><strong>Instagram</strong><span>@bubeostore</span></span>
+              </a>
+              <a class="contact-method" href="https://www.tiktok.com/@bubeostore34?_r=1&_t=ZS-96WmzvqBsLU" target="_blank" rel="noopener">
+                <span class="contact-icon">TT</span>
+                <span><strong>TikTok</strong><span>@bubeostore34</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#home" class="brand">
+          <span class="brand-mark">b</span>
+          <span>BubeoStore</span>
+        </a>
+        <p class="copyright">© <span id="year"></span> BubeoStore. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links" aria-label="Footer quick links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="socials" aria-label="Social links">
+        <a href="https://wa.me/000000000000" target="_blank" rel="noopener">Zalo</a>
+        <a href="https://www.instagram.com/bubeo.store?igsh=MWxld2tvdXR4aWcxMw==" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@bubeostore34?_r=1&_t=ZS-96WmzvqBsLU" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================================================
+       PRODUCT DATA
+       Edit this area to change product names, categories,
+       prices, sizes, colors, badges, and image URLs.
+       Image tip: replace image with your real product photo URL
+       or local path, for example: images/pink-clog.jpg
+       ========================================================= */
+
+    const products = [
+      {
+        id: 1,
+        name: "Classic Be",
+        category: "classic",
+        badge: "Best seller",
+        price: "200k",
+        description: "Crocs be sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["Pink", "White", "Beige", "Blue", "Gray"],
+        images: ["images/classic-be.png", "images/IMG_1656.JPG"],
+      },
+      {
+        id: 2,
+        name: "Classic Xam",
+        category: "classic",
+        badge: "Best seller",
+        price: "300k",
+        description: "Crocs xam sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["Pink", "White", "Beige", "Blue", "Gray"],
+        images: ["images/classic-xam.png", "images/IMG_1663.JPG"],
+      },
+      {
+        id: 3,
+        name: "Classic Trang",
+        category: "classic",
+        badge: "Best seller",
+        price: "300k",
+        description: "Crocs trang sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["Pink", "White", "Beige", "Blue", "Gray"],
+        images: ["images/classic-trang.png", "images/IMG_9649.JPG"],
+      },
+      {
+        id: 4,
+        name: "Zootopia",
+        category: "collab",
+        badge: "Best seller",
+        price: "300k",
+        description: "Crocs zootopia sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["Blue"],
+        image: "images/zootopia.png",
+      },
+      // {
+      //   id: 5,
+      //   name: "Classic Hong",
+      //   category: "classic",
+      //   badge: "Best seller",
+      //   price: "300k",
+      //   description: "Crocs hong sieu dang iu",
+      //   sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+      //   colors: ["Pink", "White", "Beige", "Blue", "Gray"],
+      //   image: "images/classic-hong.png",
+      //   featured: true
+      // },
+      // {
+      //   id: 6,
+      //   name: "Classic Xanh",
+      //   category: "classic",
+      //   badge: "Best seller",
+      //   price: "300k",
+      //   description: "Crocs xanh sieu dang iu",
+      //   sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+      //   colors: ["Pink", "White", "Beige", "Blue", "Gray"],
+      //   image: "images/classic-xanh.png",
+      //   featured: true
+      // }
+      
+      {
+        id: 7,
+        name: "Batman",
+        category: "collab",
+        badge: "Best seller",
+        price: "300k",
+        description: "Crocs batman sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["Black"],
+        images: ["images/batman.jpg", "images/Crocs Classic Batman.JPG"],
+      },
+
+      {
+        id: 8,
+        name: "Hello Kitty",
+        category: "collab",
+        badge: "Best seller",
+        price: "300k",
+        description: "Crocs hello kitty sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["White"],
+        image: "images/hello_kitty.jpg",
+      },
+
+      {
+        id: 9,
+        name: "Powerpuff Girls Blossom",
+        category: "collab",
+        badge: "Best seller",
+        price: "300k",
+        description: "Crocs powerpuff girls blossom sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["Pink"],
+        image: "images/powerpuff_girls_blossom.jpg",
+      },
+
+      {
+        id: 10,
+        name: "Enamel Buckle",
+        category: "collab",
+        badge: "New arrival",
+        price: "100k",
+        description: "Crocs enamel buckle sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["White"],
+        image: "images/enamel_buckle.jpg",
+      },
+
+      {
+        id: 11,
+        name: "Loopy",
+        category: "collab",
+        badge: "New arrival",
+        price: "100k",
+        description: "Crocs loopy sieu dang iu",
+        sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
+        colors: ["Pink"],
+        image: "images/loopy.png",
+      },
+
+    ];
+
+    const commonSizes = ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"];
+
+    const commonColors = [
+      { name: "Pink", value: "#ff9aca" },
+      { name: "White", value: "#ffffff" },
+      { name: "Black", value: "#2f2a2d" },
+      { name: "Beige", value: "#e8d5be" },
+      { name: "Blue", value: "#a9d8ff" },
+      { name: "Gray", value: "#A8AAA6" }
+
+    ];
+
+    const colorMap = Object.fromEntries(commonColors.map(color => [color.name, color.value]));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const productGrid = document.getElementById("productGrid");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const navLinks = document.getElementById("navLinks");
+      const menuToggle = document.getElementById("menuToggle");
+
+      function renderProducts(category = "all") {
+        const filteredProducts = category === "all"
+          ? products
+          : products.filter(product => product.category === category);
+
+        if (productGrid) {
+          productGrid.innerHTML = filteredProducts.map(product => {
+            const images = product.images || [product.image];
+
+            return `
+              <article id="product-${product.id}" class="product-card">
+                <div class="product-image-wrap">
+                  <div class="product-gallery" aria-label="Swipe through photos of ${product.name}">
+                    ${images.map((src, index) => `
+                      <img src="${src}" alt="${product.name} photo ${index + 1}" loading="lazy" />
+                    `).join("")}
+                  </div>
+                  <span class="product-badge">${product.badge}</span>
+                </div>
+                <div class="product-content">
+                  <div class="product-topline">
+                    <h3>${product.name}</h3>
+                    <span class="price">${product.price}</span>
+                  </div>
+                  <p class="product-desc">${product.description}</p>
+
+                  <div class="meta-group">
+                    <span class="meta-label">Available sizes</span>
+                    <div class="badge-row">
+                      ${product.sizes.slice(0, 6).map(size => `<span class="badge">${size}</span>`).join("")}
+                      ${product.sizes.length > 6 ? `<span class="badge">+${product.sizes.length - 6} more</span>` : ""}
+                    </div>
+                  </div>
+
+                  <div class="meta-group">
+                    <span class="meta-label">Colors</span>
+                    <div class="badge-row" aria-label="Available colors for ${product.name}">
+                      ${product.colors.map(color => `<span class="color-dot" title="${color}" style="background:${colorMap[color] || '#ffd6e8'}"></span>`).join("")}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            `;
+          }).join("");
+        }
+      }
+
+      function renderVariants() {
+        const sizeCloud = document.getElementById("sizeCloud");
+        if (sizeCloud) {
+          sizeCloud.innerHTML = commonSizes
+            .map(size => `<span class="size-chip">${size}</span>`)
+            .join("");
+        }
+
+        const colorCloud = document.getElementById("colorCloud");
+        if (colorCloud) {
+          colorCloud.innerHTML = commonColors
+            .map(color => `
+              <span class="color-chip">
+                <span class="color-dot" style="background:${color.value}"></span>
+                ${color.name}
+              </span>
+            `)
+            .join("");
+        }
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+          renderProducts(button.dataset.filter);
+        });
+      });
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuToggle.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", event => {
+          event.preventDefault();
+          const formNote = document.getElementById("formNote");
+          if (formNote) {
+            formNote.textContent =
+              "Message preview only: connect this form to a service like Formspree, Netlify Forms, or your own backend to receive inquiries.";
+          }
+        });
+      }
+
+      const yearElement = document.getElementById("year");
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      renderProducts();
+      renderVariants();
+    });
+  </script>
+</body>
+</html>
