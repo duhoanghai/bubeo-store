@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="product-desc">${product.description}</p>
 
               <div class="meta-group">
-                <span class="meta-label">Size hiện có</span>
+                <span class="meta-label">Size</span>
                 <div class="badge-row">
                   ${product.sizes.slice(0, 6).map(size => `<span class="badge">${size}</span>`).join("")}
                   ${product.sizes.length > 6 ? `<span class="badge">+${product.sizes.length - 6} size khác</span>` : ""}

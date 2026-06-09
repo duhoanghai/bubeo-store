@@ -17,7 +17,11 @@ const commonColors = [
   { name: "Đen", value: "#2f2a2d" },
   { name: "Be", value: "#e8d5be" },
   { name: "Xanh", value: "#a9d8ff" },
-  { name: "Xám", value: "#A8AAA6" }
+  { name: "Xám", value: "#A8AAA6" },
+  { name: "Green", value: "#1A2421" },
+  { name: "Orange", value: "#FF7E00" }
+
+
 ];
 
 // Convert color array to object for quick lookup
@@ -179,7 +183,7 @@ const products = [
     price: "500k",
     description: "Mẫu Donut ngọt ngào, màu sắc tươi tắn và cực kỳ đáng yêu.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
-    colors: ["Hồng"],
+    colors: ["Orange"],
     images: ["assets/images/donut/donut1.JPG", "assets/images/donut/donut2.JPG", "assets/images/donut/donut3.JPG"],
   },
   {
@@ -245,7 +249,7 @@ const products = [
     price: "400k",
     description: "Mẫu Minecraft màu xanh cá tính, vui nhộn và khác biệt.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
-    colors: ["Xanh lá"],
+    colors: ["Green"],
     images: ["assets/images/minecraft/mc1.JPG", "assets/images/minecraft/mc2.JPG", "assets/images/minecraft/mc3.JPG"],
   },
 ];
