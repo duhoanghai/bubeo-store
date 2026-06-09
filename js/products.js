@@ -18,7 +18,7 @@ const commonColors = [
   { name: "Be", value: "#e8d5be" },
   { name: "Xanh", value: "#a9d8ff" },
   { name: "Xám", value: "#A8AAA6" },
-  { name: "Green", value: "#1A2421" },
+  { name: "Green", value: "#0B6623" },
   { name: "Orange", value: "#FF7E00" }
 
 
