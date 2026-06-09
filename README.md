@@ -2,7 +2,7 @@
 
 ## Overview
 
-Your website has been refactored from a single `index.html` file into a well-organized, maintainable project structure. This makes it easier to manage, scale, and collaborate on the code.
+Your website has been refactored from a single `index.html` file into a well-organized, maintainable project structure. This makes it easier to manage, scale, and collaborate on the code
 
 ---
 
