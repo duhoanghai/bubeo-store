@@ -37,7 +37,7 @@ const products = [
     description: "Dép sục màu be nhẹ nhàng, dễ phối đồ và siêu đáng yêu.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng", "Trắng", "Be", "Xanh", "Xám"],
-    images: ["assets/images/classic_be/be1.png", "assets/images/classic_be/be2.jpg", "assets/images/classic_be/be3.jpg"],
+    images: ["assets/images/classic_be/be1.png", "assets/images/classic_be/be2.JPG", "assets/images/classic_be/be3.JPG"],
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const products = [
     description: "Dép sục màu xám cá tính, sạch màu và mang rất êm chân.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng", "Trắng", "Be", "Xanh", "Xám"],
-    images: ["assets/images/classic_xam_atmosphere/xam1.png", "assets/images/classic_xam_atmosphere/xam2.png", "assets/images/classic_xam_atmosphere/xam3.png", "assets/images/classic_xam_atmosphere/xam4.jpg"],
+    images: ["assets/images/classic_xam_atmosphere/xam1.png", "assets/images/classic_xam_atmosphere/xam2.png", "assets/images/classic_xam_atmosphere/xam3.png", "assets/images/classic_xam_atmosphere/xam4.JPG"],
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const products = [
     description: "Dép sục màu hồng ngọt ngào, nổi bật và siêu dễ thương.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng", "Trắng", "Be", "Xanh", "Xám"],
-    images: ["assets/images/classic_hong/hong1.jpg", "assets/images/classic_hong/hong2.jpg", "assets/images/classic_hong/hong3.jpg"],
+    images: ["assets/images/classic_hong/hong1.JPG", "assets/images/classic_hong/hong2.JPG", "assets/images/classic_hong/hong3.JPG"],
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ const products = [
     description: "Mẫu loang xanh pastel mát mắt, dễ thương và thoải mái khi mang.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng", "Xanh"],
-    images: ["assets/images/baya_loang_xanh/xanh1.heic", "assets/images/baya_loang_xanh/xanh2.jpg", "assets/images/baya_loang_xanh/xanh3.jpg"],
+    images: ["assets/images/baya_loang_xanh/xanh1.heic", "assets/images/baya_loang_xanh/xanh2.JPG", "assets/images/baya_loang_xanh/xanh3.JPG"],
   },
   {
     id: 7,
@@ -103,7 +103,7 @@ const products = [
     description: "Mẫu Zootopia vui nhộn, nổi bật với chi tiết đáng yêu.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Xanh"],
-    images: ["assets/images/zootopia/zoo1.png", "assets/images/zootopia/zoo2.png", "assets/images/zootopia/zoo3.jpg", "assets/images/zootopia/zoo4.png", "assets/images/zootopia/zoo5.png"],
+    images: ["assets/images/zootopia/zoo1.png", "assets/images/zootopia/zoo2.png", "assets/images/zootopia/zoo3.JPG", "assets/images/zootopia/zoo4.png", "assets/images/zootopia/zoo5.png"],
   },
   {
     id: 8,
@@ -114,7 +114,7 @@ const products = [
     description: "Mẫu Batman màu đen cá tính, dễ phối và cực chất.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Đen"],
-    images: ["assets/images/batman/batman1.jpg", "assets/images/batman/batman2.jpg", "assets/images/batman/batman3.jpg"],
+    images: ["assets/images/batman/batman1.JPG", "assets/images/batman/batman2.JPG", "assets/images/batman/batman3.JPG"],
   },
   {
     id: 9,
@@ -125,7 +125,7 @@ const products = [
     description: "Mẫu Hello Kitty trắng hồng ngọt ngào, dành cho team mê phong cách cute.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Trắng"],
-    images: ["assets/images/hello_kitty/kitty1.jpg", "assets/images/hello_kitty/kitty2.jpg"],
+    images: ["assets/images/hello_kitty/kitty1.JPG", "assets/images/hello_kitty/kitty2.JPG"],
   },
   {
     id: 10,
@@ -136,7 +136,7 @@ const products = [
     description: "Mẫu Powerpuff Girls Blossom màu hồng nổi bật, xinh và cá tính.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng"],
-    images: ["assets/images/powerpuff_girls_blossom/power.heic", "assets/images/powerpuff_girls_blossom/power.jpg"],
+    images: ["assets/images/powerpuff_girls_blossom/power.heic", "assets/images/powerpuff_girls_blossom/power.JPG"],
   },
   {
     id: 11,
@@ -147,7 +147,7 @@ const products = [
     description: "Mẫu Enamel Buckle xanh pastel nhẹ nhàng, có điểm nhấn khóa xinh xắn.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Xanh"],
-    images: ["assets/images/buckle_xanh_pastel/buckle1.jpg", "assets/images/buckle_xanh_pastel/buckle2.jpg", "assets/images/buckle_xanh_pastel/buckle3.jpg"],
+    images: ["assets/images/buckle_xanh_pastel/buckle1.JPG", "assets/images/buckle_xanh_pastel/buckle2.JPG", "assets/images/buckle_xanh_pastel/buckle3.JPG"],
   },
   {
     id: 12,
@@ -158,7 +158,7 @@ const products = [
     description: "Mẫu Loopy màu hồng dễ thương, hợp phong cách trẻ trung.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng"],
-    images: ["assets/images/loopy/loopy.heic", "assets/images/loopy/loopy2.jpg", "assets/images/loopy/loopy3.jpg"],
+    images: ["assets/images/loopy/loopy.heic", "assets/images/loopy/loopy2.JPG", "assets/images/loopy/loopy3.JPG"],
   },
   {
     id: 13,
@@ -180,7 +180,7 @@ const products = [
     description: "Mẫu Donut ngọt ngào, màu sắc tươi tắn và cực kỳ đáng yêu.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng"],
-    images: ["assets/images/donut/donut1.jpg", "assets/images/donut/donut2.jpg", "assets/images/donut/donut3.jpg"],
+    images: ["assets/images/donut/donut1.JPG", "assets/images/donut/donut2.JPG", "assets/images/donut/donut3.JPG"],
   },
   {
     id: 15,
@@ -191,7 +191,7 @@ const products = [
     description: "Mẫu Lotso màu hồng ngọt, mềm mại và dễ thương.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng"],
-    images: ["assets/images/classic_lotso/lotso1.jpg", "assets/images/classic_lotso/lotso2.jpg", "assets/images/classic_lotso/lotso3.jpg"],
+    images: ["assets/images/classic_lotso/lotso1.JPG", "assets/images/classic_lotso/lotso2.JPG", "assets/images/classic_lotso/lotso3.JPG"],
   },
   {
     id: 16,
@@ -202,7 +202,7 @@ const products = [
     description: "Mẫu Ballet nữ tính, dáng gọn nhẹ và dễ mang mỗi ngày.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng", "Đen", "Trắng", "Be"],
-    images: ["assets/images/crocs_ballet/ballet1.jpg", "assets/images/crocs_ballet/ballet2.png", "assets/images/crocs_ballet/ballet3.png", "assets/images/crocs_ballet/ballet4.png", "assets/images/crocs_ballet/ballet5.png"],
+    images: ["assets/images/crocs_ballet/ballet1.JPG", "assets/images/crocs_ballet/ballet2.png", "assets/images/crocs_ballet/ballet3.png", "assets/images/crocs_ballet/ballet4.png", "assets/images/crocs_ballet/ballet5.png"],
   },
   {
     id: 17,
@@ -213,7 +213,7 @@ const products = [
     description: "Mẫu Line Friends đáng yêu, tông trắng dễ phối và trẻ trung.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Trắng"],
-    images: ["assets/images/line_friends/line1.jpg", "assets/images/line_friends/line2.jpg", "assets/images/line_friends/line3.jpg"],
+    images: ["assets/images/line_friends/line1.JPG", "assets/images/line_friends/line2.JPG", "assets/images/line_friends/line3.JPG"],
   },
   {
     id: 18,
@@ -224,7 +224,7 @@ const products = [
     description: "Mẫu Squishmallow mềm mại, cute và hợp phong cách năng động.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Trắng"],
-    images: ["assets/images/squishmallow/mallow1.jpg", "assets/images/squishmallow/mallow2.jpg", "assets/images/squishmallow/mallow3.jpg", "assets/images/squishmallow/mallow4.jpg"],
+    images: ["assets/images/squishmallow/mallow1.JPG", "assets/images/squishmallow/mallow2.JPG", "assets/images/squishmallow/mallow3.JPG", "assets/images/squishmallow/mallow4.JPG"],
   },
   {
     id: 19,
@@ -235,7 +235,7 @@ const products = [
     description: "Mẫu Snoopy phiên bản 2 tông trắng dễ thương, đơn giản mà nổi bật.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Trắng"],
-    images: ["assets/images/snoopy_ver2/snoopy_ver2_1.jpg", "assets/images/snoopy_ver2/snoopy_ver2_2.jpg"],
+    images: ["assets/images/snoopy_ver2/snoopy_ver2_1.JPG", "assets/images/snoopy_ver2/snoopy_ver2_2.JPG"],
   },
   {
     id: 20,
@@ -246,6 +246,6 @@ const products = [
     description: "Mẫu Minecraft màu xanh cá tính, vui nhộn và khác biệt.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Xanh lá"],
-    images: ["assets/images/minecraft/mc1.jpg", "assets/images/minecraft/mc2.jpg", "assets/images/minecraft/mc3.jpg"],
+    images: ["assets/images/minecraft/mc1.JPG", "assets/images/minecraft/mc2.JPG", "assets/images/minecraft/mc3.JPG"],
   },
 ];
