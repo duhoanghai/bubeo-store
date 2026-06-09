@@ -202,7 +202,7 @@ const products = [
     description: "Mẫu Ballet nữ tính, dáng gọn nhẹ và dễ mang mỗi ngày.",
     sizes: ["36-37", "37-38", "38-39", "39-40", "40-41", "41-42", "42-43"],
     colors: ["Hồng", "Đen", "Trắng", "Be"],
-    images: ["assets/images/crocs_ballet/ballet1.JPG", "assets/images/crocs_ballet/ballet2.png", "assets/images/crocs_ballet/ballet3.png", "assets/images/crocs_ballet/ballet4.png", "assets/images/crocs_ballet/ballet5.png"],
+    images: ["assets/images/crocs_ballet/ballet1.jpg", "assets/images/crocs_ballet/ballet2.png", "assets/images/crocs_ballet/ballet3.png", "assets/images/crocs_ballet/ballet4.png", "assets/images/crocs_ballet/ballet5.png"],
   },
   {
     id: 17,
